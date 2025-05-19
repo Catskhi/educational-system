@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: school
+  profiles:
+    active: dev
+
+  output:
+    ansi:
+      enabled: ALWAYS
+
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+
+#hivemind:
+#  security:
+#    secret: ${JWT_SECRET}
+#    allowed-origins: ${ALLOWED_ORIGINS}%
